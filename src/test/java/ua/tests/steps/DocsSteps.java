@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import ua.tests.pages.DocsPage;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,10 +20,11 @@ public class DocsSteps {
     }
 
     @Then("left-side menu contains the following links")
-    public void verifyLeftSideMenuContainsLinks(List<String> expectedTitles) {
+    public void verifyLeftSideMenuContainsFollowingLinks(List<String> expectedTitles) {
         assertThat(docsPage.getMenuItemTitles())
                 .extracting(WebElement::getText)
-                .as("Some of the left-side menu items are not expected")
+//                .extracting(webElement -> webElement.getText())
+                .as("Some of the left-side menu items are not as expected")
                 .containsAll(expectedTitles);
     }
 }

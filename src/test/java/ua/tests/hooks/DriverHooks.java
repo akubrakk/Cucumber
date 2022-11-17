@@ -7,12 +7,12 @@ import ua.tests.driver.DriverManager;
 public class DriverHooks {
 
     @Before
-    public void setupDriver(){
+    public void setupDriver() {
         DriverManager.setupDriver();
     }
 
-    @After
-    public void quit(){
+    @After(order = 1)
+    public void quitDriver() {
         DriverManager.quitDriver();
     }
 }
