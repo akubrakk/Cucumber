@@ -1,6 +1,6 @@
 Feature: As a user I want to get ability to use menu sections
 
-
+  @severity=critical
   @regression
   Scenario Outline: Docs sections should contains appropriate columns
     Given the user opens Cucumber website
@@ -8,6 +8,8 @@ Feature: As a user I want to get ability to use menu sections
     And the user clicks on the "<title>" item
     Then page with title "<title>" is displayed
     Examples:
-      | title           |
-      | Installation    |
-      | Gherkin Syntax  |
+      | title              |
+      | Installation       |
+#      | Guides             |
+      | Gherkin Syntax     |
+#      | 10 Minute Tutorial |
